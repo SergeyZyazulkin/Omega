@@ -1,0 +1,32 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:seek_bar_preferences="http://schemas.android.com/apk/res/pvms.omega">
+    <PreferenceCategory android:title="@string/options_gameplay">
+        <ListPreference
+            android:entries="@array/difficulty"
+            android:entryValues="@array/difficulty"
+            android:key="pref_difficulty"
+            android:defaultValue="@string/options_difficulty_default"
+            android:summary="@string/options_difficulty_summary"
+            android:title="@string/options_difficulty_title" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_enable_animation"
+            android:summary="@string/options_animation_summary"
+            android:title="@string/options_animation_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/options_sound_music">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_enable_sound"
+            android:summary="@string/options_game_sounds_summary"
+            android:title="@string/options_game_sounds_title" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_enable_music"
+            android:summary="@string/options_background_music_summary"
+            android:title="@string/options_background_music_title" />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">Omega</string>
+
+    <string name="main_menu_play">PLAY</string>
+    <string name="main_menu_settings">SETTINGS</string>
+    <string name="main_menu_leaderboards">LEADERBOARDS</string>
+    <string name="main_menu_tutorial">TUTORIAL</string>
+
+    <string name="title_letter_o">O</string>
+    <string name="title_letter_m">M</string>
+    <string name="title_letter_e">E</string>
+    <string name="title_letter_g">G</string>
+    <string name="title_letter_a">A</string>
+
+    <string name="dialog_text">Enter your name:</string>
+    <string name="dialog_edit_text_hint">Your name</string>
+    <string name="dialog_button_start">Start</string>
+    <string name="dialog_button_cancel">Cancel</string>
+
+    <string name="game_screen_return">Return to main menu</string>
+    <string name="game_screen_turn">Turn %d</string>
+
+    <string name="tutorial_screen_player_description">Some info…\nSome info…</string>
+    <string name="tutorial_screen_title">OBJECTS &amp; DESCRIPTION</string>
+
+    <string name="options_difficulty_summary">Affects the gameplay</string>
+    <string name="options_difficulty_title">Difficulty</string>
+    <string name="options_difficulty_default">Normal</string>
+    <string name="options_gameplay">Gameplay</string>
+    <string name="options_animation_title">Animation</string>
+    <string name="options_animation_summary">Enables/disables game animation</string>
+    <string name="options_sound_music">Sound &amp; Music</string>
+    <string name="options_game_sounds_title">Game sounds</string>
+    <string name="options_game_sounds_summary">Enables/disables game sounds</string>
+    <string name="options_background_music_title">Background music</string>
+    <string name="options_background_music_summary">Enables/disables background music</string>
+    
+    <string-array name="difficulty">
+        <item name="easy">Easy</item>
+        <item name="normal">Normal</item>
+        <item name="hard">Hard</item>
+    </string-array>
+
+    <string name="leaderboards_screen_easy">EASY</string>
+    <string name="leaderboards_screen_normal">NORMAL</string>
+    <string name="leaderboards_screen_hard">HARD</string>
+    <string name="leaderboards_screen_place1">1.</string>
+    <string name="leaderboards_screen_place2">2.</string>
+    <string name="leaderboards_screen_place3">3.</string>
+    <string name="leaderboards_screen_place4">4.</string>
+    <string name="leaderboards_screen_place5">5.</string>
+    <string name="leaderboards_screen_place6">6.</string>
+    <string name="leaderboards_screen_place7">7.</string>
+    <string name="leaderboards_screen_place8">8.</string>
+    <string name="leaderboards_screen_place9">9.</string>
+    <string name="leaderboards_screen_place10">10.</string>
+    <string name="leaderboards_screen_place11">11.</string>
+    <string name="leaderboards_screen_place12">12.</string>
+    <string name="leaderboards_screen_place13">13.</string>
+    <string name="leaderboards_screen_place14">14.</string>
+    <string name="leaderboards_screen_place15">15.</string>
+    <string name="leaderboards_screen_place16">16.</string>
+    <string name="leaderboards_screen_place17">17.</string>
+    <string name="leaderboards_screen_place18">18.</string>
+    <string name="leaderboards_screen_place19">19.</string>
+    <string name="leaderboards_screen_place20">20.</string>
+    <string name="leaderboards_screen_no_name">---------------</string>
+    <string name="leaderboards_screen_no_score">-----</string>
+    <string name="leaderboards_screen_place">Place</string>
+    <string name="leaderboards_screen_name">Name</string>
+    <string name="leaderboards_screen_score">Score</string>
+
+</resources>
