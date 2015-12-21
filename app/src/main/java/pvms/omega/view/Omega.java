@@ -1,10 +1,13 @@
-package pvms.omega;
+package pvms.omega.view;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
@@ -12,6 +15,10 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import pvms.omega.R;
+import pvms.omega.model.BackgroundMusic;
 
 
 public class Omega extends Activity implements Animation.AnimationListener {
@@ -48,6 +55,16 @@ public class Omega extends Activity implements Animation.AnimationListener {
         btPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences settings = PreferenceManager.
+                        getDefaultSharedPreferences(Omega.this);
+                boolean soundEnabled = settings.getBoolean("pref_enable_sound", true);
+
+                if (soundEnabled) {
+                    MediaPlayer player = MediaPlayer.create(Omega.this, R.raw.press);
+                    player.setLooping(false);
+                    player.start();
+                }
+
                 final EditText etName = new EditText(Omega.this);
                 etName.setGravity(Gravity.CENTER);
                 etName.setHint(getString(R.string.dialog_edit_text_hint));
@@ -58,15 +75,48 @@ public class Omega extends Activity implements Animation.AnimationListener {
                         .setPositiveButton(getString(R.string.dialog_button_start),
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int whichButton) {
-                                        Intent intent = new Intent(Omega.this, GameScreen.class);
-                                        startActivity(intent);
-                                        overridePendingTransition(R.anim.slide_in_right,
-                                                R.anim.slide_out_left);
+                                        SharedPreferences settings = PreferenceManager.
+                                                getDefaultSharedPreferences(Omega.this);
+                                        boolean soundEnabled = settings.getBoolean(
+                                                "pref_enable_sound", true);
+
+                                        if (soundEnabled) {
+                                            MediaPlayer player = MediaPlayer.create(
+                                                    Omega.this, R.raw.press);
+                                            player.setLooping(false);
+                                            player.start();
+                                        }
+
+                                        String name = etName.getText().toString().trim();
+
+                                        if (!name.isEmpty()) {
+                                            Intent intent = new Intent(
+                                                    Omega.this, GameScreen.class);
+                                            intent.putExtra("name", name);
+                                            startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_right,
+                                                    R.anim.slide_out_left);
+                                        } else {
+                                            Toast.makeText(Omega.this,
+                                                    getString(R.string.dialog_error_name),
+                                                    Toast.LENGTH_SHORT).show();
+                                        }
                                     }
                                 })
                         .setNegativeButton(getString(R.string.dialog_button_cancel),
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int whichButton) {
+                                        SharedPreferences settings = PreferenceManager.
+                                                getDefaultSharedPreferences(Omega.this);
+                                        boolean soundEnabled = settings.getBoolean(
+                                                "pref_enable_sound", true);
+
+                                        if (soundEnabled) {
+                                            MediaPlayer player = MediaPlayer.create(
+                                                    Omega.this, R.raw.press);
+                                            player.setLooping(false);
+                                            player.start();
+                                        }
                                     }
                                 })
                         .show();
@@ -76,6 +126,16 @@ public class Omega extends Activity implements Animation.AnimationListener {
         btTutorial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences settings = PreferenceManager.
+                        getDefaultSharedPreferences(Omega.this);
+                boolean soundEnabled = settings.getBoolean("pref_enable_sound", true);
+
+                if (soundEnabled) {
+                    MediaPlayer player = MediaPlayer.create(Omega.this, R.raw.press);
+                    player.setLooping(false);
+                    player.start();
+                }
+
                 Intent intent = new Intent(Omega.this, TutorialScreen.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
@@ -85,6 +145,16 @@ public class Omega extends Activity implements Animation.AnimationListener {
         btSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences settings = PreferenceManager.
+                        getDefaultSharedPreferences(Omega.this);
+                boolean soundEnabled = settings.getBoolean("pref_enable_sound", true);
+
+                if (soundEnabled) {
+                    MediaPlayer player = MediaPlayer.create(Omega.this, R.raw.press);
+                    player.setLooping(false);
+                    player.start();
+                }
+
                 Intent intent = new Intent(Omega.this, SettingsScreen.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
@@ -94,9 +164,34 @@ public class Omega extends Activity implements Animation.AnimationListener {
         btLeaderboards.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences settings = PreferenceManager.
+                        getDefaultSharedPreferences(Omega.this);
+                boolean soundEnabled = settings.getBoolean("pref_enable_sound", true);
+
+                if (soundEnabled) {
+                    MediaPlayer player = MediaPlayer.create(Omega.this, R.raw.press);
+                    player.setLooping(false);
+                    player.start();
+                }
+
                 Intent intent = new Intent(Omega.this, LeaderboardsScreen.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
+
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+        settings.registerOnSharedPreferenceChangeListener(
+                new SharedPreferences.OnSharedPreferenceChangeListener() {
+            @Override
+            public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
+                boolean soundEnabled = sharedPreferences.getBoolean("pref_enable_sound", true);
+
+                if (soundEnabled) {
+                    MediaPlayer player = MediaPlayer.create(Omega.this, R.raw.press);
+                    player.setLooping(false);
+                    player.start();
+                }
             }
         });
     }

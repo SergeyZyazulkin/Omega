@@ -8,7 +8,7 @@
         android:theme="@style/AppTheme" >
 
         <activity
-            android:name=".Omega"
+            android:name=".view.Omega"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -18,27 +18,29 @@
         </activity>
 
         <activity
-            android:name=".GameScreen"
+            android:name=".view.GameScreen"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
 
         <activity
-            android:name=".TutorialScreen"
+            android:name=".view.TutorialScreen"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
 
         <activity
-            android:name=".SettingsScreen"
+            android:name=".view.SettingsScreen"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
 
         <activity
-            android:name=".LeaderboardsScreen"
+            android:name=".view.LeaderboardsScreen"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
+
+        <service android:enabled="true" android:name=".model.BackgroundMusic" />
     </application>
 </manifest>

@@ -13,14 +13,22 @@
     <string name="title_letter_a">A</string>
 
     <string name="dialog_text">Enter your name:</string>
+    <string name="dialog_error_name">Invalid name</string>
     <string name="dialog_edit_text_hint">Your name</string>
     <string name="dialog_button_start">Start</string>
     <string name="dialog_button_cancel">Cancel</string>
 
     <string name="game_screen_return">Return to main menu</string>
     <string name="game_screen_turn">Turn %d</string>
+    <string name="game_screen_game_over">GAME OVER</string>
+    <string name="game_screen_button_restart">Play again</string>
+    <string name="game_screen_button_return">Go to main menu</string>
 
-    <string name="tutorial_screen_player_description">Some info…\nSome info…</string>
+    <string name="tutorial_screen_player_description">It\'s Mr.Android.\nYou must keep him alive as long as you can!!!</string>
+    <string name="tutorial_screen_enemy_description">It\'s an evil bug.\nDon\'t allow him to eat you!!!</string>
+    <string name="tutorial_screen_free_cell_description">It\'s a free cell.\nYou can stay there!!!</string>
+    <string name="tutorial_screen_danger_cell_description">It\'s a warning cell.\nThe block will fall there next turn!!!</string>
+    <string name="tutorial_screen_block_cell_description">It\'s a block cell.\nYou can\'t stay there!!!</string>
     <string name="tutorial_screen_title">OBJECTS &amp; DESCRIPTION</string>
 
     <string name="options_difficulty_summary">Affects the gameplay</string>

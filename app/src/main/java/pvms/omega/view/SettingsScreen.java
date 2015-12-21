@@ -1,8 +1,13 @@
-package pvms.omega;
+package pvms.omega.view;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
+
+import pvms.omega.R;
+import pvms.omega.model.BackgroundMusic;
 
 public class SettingsScreen extends PreferenceActivity {
 
